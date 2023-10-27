@@ -8,10 +8,10 @@ public interface BusScheduleController {
     @PostMapping
     ResponseEntity<?> addSchedule(@RequestBody BusSheduleDao busSheduleDao);
 
-    @PutMapping
+    @PostMapping("/update")
     ResponseEntity<?> updateSchedule(@RequestBody BusSheduleDao busSheduleDao);
 
-    @DeleteMapping
+    @PostMapping("/delete")
     ResponseEntity<?> deleteSchedule(@RequestBody BusSheduleDao busSheduleDao);
 
     @GetMapping

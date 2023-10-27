@@ -13,6 +13,7 @@ public interface UserService {
 
     ResponseEntity<?> getAllUser();
 
+    ResponseEntity<?> getCurrentUser();
     ResponseEntity<?> checkToken();
 
     ResponseEntity<?> changePassword(Map<String , String> requestMap);

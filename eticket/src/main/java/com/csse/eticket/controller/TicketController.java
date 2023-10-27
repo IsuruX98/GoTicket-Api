@@ -20,4 +20,7 @@ public interface TicketController {
 
     @DeleteMapping("/{id}")
     ResponseEntity<Void> deleteTicket(@PathVariable int id);
+
+    @GetMapping("/last")
+    ResponseEntity<?> getLastTicket();
 }

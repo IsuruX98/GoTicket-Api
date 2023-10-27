@@ -14,4 +14,7 @@ public interface PassengerController {
 
     @GetMapping("/")
     ResponseEntity<?> getUser();
+
+    @GetMapping("/acc-balance/{id}")
+    ResponseEntity<?> getAccountBalance(@PathVariable Integer id);
 }

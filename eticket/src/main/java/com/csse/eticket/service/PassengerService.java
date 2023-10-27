@@ -14,4 +14,6 @@ public interface PassengerService {
     List<User> getPassengers();
 
     Object deductAmount(Integer id, float balance);
+
+    float accountBalance(Integer id);
 }

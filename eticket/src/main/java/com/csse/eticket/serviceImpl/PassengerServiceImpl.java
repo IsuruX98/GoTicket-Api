@@ -61,4 +61,10 @@ public class PassengerServiceImpl implements PassengerService {
 
         return ResponseEntity.status(HttpStatus.OK).body(ETicketConstants.NOT_FOUND);
     }
+
+    @Override
+    public float accountBalance(Integer id) {
+        return topUpAccRepository.findBalanceById(id);
+
+    }
 }

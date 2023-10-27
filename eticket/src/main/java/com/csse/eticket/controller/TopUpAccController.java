@@ -8,7 +8,8 @@ public interface TopUpAccController {
     @PostMapping
     ResponseEntity<?> addTopUpAcc(@RequestBody TopUpAccDao topUpAccDao);
 
-    @DeleteMapping
+    //Added post mapping for delete
+    @PostMapping("/delete")
     ResponseEntity<?> deleteTopUpAcc(@RequestBody TopUpAccDao topUpAccDao);
 
     @GetMapping
@@ -19,6 +20,5 @@ public interface TopUpAccController {
 
     @GetMapping("/user")
     ResponseEntity<?> getTopUpAccountsByUser();
-
 
 }

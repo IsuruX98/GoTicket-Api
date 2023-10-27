@@ -22,6 +22,7 @@ public class PassengerControllerImpl implements PassengerController {
     @Autowired
     PassengerService passengerService;
 
+
     @Override
     public List<User> getPassengers() {
         return passengerService.getPassengers();
@@ -35,5 +36,10 @@ public class PassengerControllerImpl implements PassengerController {
             log.error(e.getMessage());
         }
         return  ResponseEntity.internalServerError().body("SOMETHING_WENT_WRONG");
+    }
+
+    @Override
+    public ResponseEntity<?> getAccountBalance(Integer id) {
+        return ResponseEntity.status(HttpStatus.OK).body(passengerService.accountBalance(id));
     }
 }

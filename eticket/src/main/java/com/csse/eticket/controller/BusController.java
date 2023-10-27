@@ -9,10 +9,12 @@ public interface BusController {
     @PostMapping
     ResponseEntity<?> addBus(@RequestBody BusDao busDao);
 
-    @PutMapping
+    //updated to post mapping
+    @PostMapping("/update")
     ResponseEntity<?> updateBus(@RequestBody BusDao busDao);
 
-    @DeleteMapping
+    //updated to post mapping
+    @PostMapping("/delete")
     ResponseEntity<?> deleteBus(@RequestBody BusDao busDao);
 
     @GetMapping
@@ -23,4 +25,5 @@ public interface BusController {
 
     @PostMapping("/add/{busNo}/{amount}")
     ResponseEntity<?> addAmount(@PathVariable String busNo, @PathVariable float amount);
+
 }

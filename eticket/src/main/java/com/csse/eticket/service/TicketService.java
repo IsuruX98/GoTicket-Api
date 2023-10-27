@@ -10,5 +10,7 @@ public interface TicketService {
     List<Ticket> getAllTickets();
     Ticket getTicketById(int id);
     void deleteTicket(int id);
+
+    Ticket getTicektsDesc();
 }
 

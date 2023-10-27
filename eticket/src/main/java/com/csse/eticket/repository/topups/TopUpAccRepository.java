@@ -19,4 +19,7 @@ public interface TopUpAccRepository extends JpaRepository<TopUpAcc, Integer> {
 
     @Query("SELECT t FROM TopUpAcc t WHERE t.user.id = :id")
     TopUpAcc findByUserId(Integer id);
+
+    @Query("SELECT t.balance from TopUpAcc t WHERE t.user.id = :id")
+    float findBalanceById(Integer id);
 }

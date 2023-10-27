@@ -40,4 +40,10 @@ public class TicketServiceImpl implements TicketService {
     public void deleteTicket(int id) {
         ticketRepository.deleteById(id);
     }
+
+    @Override
+    public Ticket getTicektsDesc() {
+        List<Ticket> ticketList =  ticketRepository.getTicketsDesc();
+        return ticketList.get(0);
+    }
 }

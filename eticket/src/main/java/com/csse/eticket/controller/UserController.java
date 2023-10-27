@@ -19,6 +19,9 @@ public interface UserController {
     @GetMapping(path = "/get")
     ResponseEntity<?> getAllUser();
 
+
+    @GetMapping(path = "/get-current-user")
+    ResponseEntity<?> getCurrentUser();
     @GetMapping(path = "/checkToken")
     ResponseEntity<?> checkToken();
 }

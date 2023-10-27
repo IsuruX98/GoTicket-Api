@@ -146,6 +146,19 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public ResponseEntity<?> getCurrentUser() {
+        try {
+            String username = jwtFilter.getCurrentUser();
+
+            User user = userRepo.findByEmailId(username);
+
+            return ResponseEntity.ok().body(user);
+        }catch (Exception ex){
+            log.error(ex.getMessage());
+        }
+        return TravelInnUtils.getResponseEntity(ETicketConstants.SOMETHING_WENT_WRONG, HttpStatus.INTERNAL_SERVER_ERROR);
+}
+    @Override
     public ResponseEntity<?> checkToken() {
         return ResponseEntity.ok().body("true");
     }

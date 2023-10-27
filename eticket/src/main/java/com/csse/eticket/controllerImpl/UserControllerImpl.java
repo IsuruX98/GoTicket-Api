@@ -47,6 +47,16 @@ public class UserControllerImpl implements UserController {
     }
 
     @Override
+    public ResponseEntity<?> getCurrentUser() {
+        try {
+            return userService.getCurrentUser();
+        }catch (Exception ex){
+            log.error(ex.getMessage());
+        }
+        return ResponseEntity.internalServerError().body(ETicketConstants.SOMETHING_WENT_WRONG);
+}
+
+    @Override
     public ResponseEntity<?> checkToken() {
         try {
             return userService.checkToken();
